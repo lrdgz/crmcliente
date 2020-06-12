@@ -47,7 +47,7 @@ const NuevoCliente = () => {
                 data: {
                     obtenerClientesVendedor : [...obtenerClientesVendedor, nuevoCliente]
                 }
-            })
+            });
         }
     });
 
@@ -94,6 +94,10 @@ const NuevoCliente = () => {
 
           } catch (error) {
             console.log(error);
+            guardarMensaje(error.message.replace('GraphQL error: ', ''));
+            setTimeout(( ) => {
+                guardarMensaje(null);
+            }, 5000);
           }
         }
     });    
@@ -110,6 +114,7 @@ const NuevoCliente = () => {
 
     return (
         <Layout>
+            { mensaje && mostrarMensaje()}
             <h1 className="text-2xl text-gray-800 font-light">Nuevo Cliente</h1>
             
             <div className="flex justify-center mt-5">
