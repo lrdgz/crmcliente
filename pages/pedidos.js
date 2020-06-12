@@ -1,12 +1,12 @@
 import Head from 'next/head';
 import Layout from '../components/Layout';
 
-const Nosotros = () => (
+const Pedidos = () => (
   <div>
     <Layout>
-      <h2>Desde Nosotros</h2>
+      <h1 className="text-2xl text-gray-800 font-light">Pedidos</h1>
     </Layout>
   </div>
 );
 
-export default Nosotros;
+export default Pedidos;
